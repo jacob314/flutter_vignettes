@@ -38,46 +38,45 @@ class FlightSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: _getBackgroundDecoration(),
-      width: double.infinity,
-      height: double.infinity,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            _buildLogoHeader(),
-            _buildSeparationLine(),
-            _buildTicketHeader(context),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18.0),
-              child: Stack(
-                children: <Widget>[
-                  Align(alignment: Alignment.centerLeft, child: _buildTicketOrigin()),
-                  Align(alignment: Alignment.center, child: _buildTicketDuration()),
-                  Align(alignment: Alignment.centerRight, child: _buildTicketDestination())
-                ],
-              ),
-            ),
-            _buildBottomIcon()
-          ],
+    final body = Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: <Widget>[
+        _buildLogoHeader(),
+        _buildSeparationLine(),
+        _buildTicketHeader(context),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          child: Stack(
+            children: <Widget>[
+              Align(
+                  alignment: Alignment.centerLeft, child: _buildTicketOrigin()),
+              Align(alignment: Alignment.center, child: _buildTicketDuration()),
+              Align(
+                  alignment: Alignment.centerRight,
+                  child: _buildTicketDestination())
+            ],
+          ),
         ),
-      ),
+        _buildBottomIcon()
+      ],
     );
-  }
-
-  _getBackgroundDecoration() {
-    if (theme == SummaryTheme.light)
-      return BoxDecoration(
-        borderRadius: BorderRadius.circular(4.0),
-        color: Colors.white,
+    if (theme == SummaryTheme.light) {
+      return Container(
+        color: Color(0xff69bcff),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        width: double.infinity,
+        height: double.infinity,
+        child: body,
       );
-    if (theme == SummaryTheme.dark)
-      return BoxDecoration(
-        borderRadius: BorderRadius.circular(4.0),
-        image: DecorationImage(image: AssetImage('images/bg_blue.png'), fit: BoxFit.cover),
+    } else {
+      return Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        color: Color(0xff18b3b5),
+        width: double.infinity,
+        height: double.infinity,
+        child: body,
       );
+    }
   }
 
   _buildLogoHeader() {
