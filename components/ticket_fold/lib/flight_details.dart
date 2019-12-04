@@ -77,7 +77,10 @@ class FlightDetails extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Zone'.toUpperCase(), style: titleTextStyle),
-                      Text(boardingPass.zone.toString(), style: contentTextStyle),
+                      Text(
+                        boardingPass.zone.toString(),
+                        style: contentTextStyle,
+                      ),
                     ],
                   ),
                   Column(
@@ -141,12 +144,14 @@ class FlightDetails extends StatelessWidget {
                           Text('MEALS', style: titleTextStyle),
                           Flexible(
                             child: Text(
-                                '• Complimentary Drinks\n'
-                                '• Optional Dishes:\n'
-                                '    • Chicken\n'
-                                '    • Beef\n'
-                                '    • Pork\n',
-                                style: paragraphTextStyle),
+                              '• Complimentary Drinks\n'
+                              '• Optional Dishes:\n'
+                              '    • Chicken\n'
+                              '    • Beef\n'
+                              '    • Pork\n'
+                              '    • Tofu\n',
+                              style: paragraphTextStyle,
+                            ),
                           ),
                         ],
                       ),
