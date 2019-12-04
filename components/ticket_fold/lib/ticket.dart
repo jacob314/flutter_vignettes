@@ -51,7 +51,7 @@ class _TicketState extends State<Ticket> {
   List<FoldEntry> _getEntries() {
     return [
       FoldEntry(height: 160.0, front: topCard),
-      FoldEntry(height: 160.0, front: middleCard, back: frontCard),
+      FoldEntry(height: 280.0, front: middleCard, back: frontCard),
       FoldEntry(height: 80.0, front: bottomCard, back: backCard)
     ];
   }
