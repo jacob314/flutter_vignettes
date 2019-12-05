@@ -135,42 +135,40 @@ class FlightDetails extends StatelessWidget {
               Expanded(
                 child: row(
                   children: <Widget>[
-                    Flexible(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text('MEALS', style: titleTextStyle),
-                          Flexible(
-                            child: Text(
-                              '• Complimentary Drinks\n'
-                              '• Optional Dishes:\n'
-                              '    • Chicken\n'
-                              '    • Beef\n'
-                              '    • Pork\n'
-                              '    • Tofu\n',
+                    Expanded(
+                      child: Text.rich(
+                        TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(text: 'MEALS\n', style: titleTextStyle),
+                            TextSpan(
+                              text: '• Complimentary Drinks\n'
+                                  '• Optional Dishes:\n'
+                                  '    • Chicken\n'
+                                  '    • Beef\n'
+                                  '    • Pork\n'
+                                  '    • Tofu\n',
                               style: paragraphTextStyle,
                             ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: 'CHECK-IN POLICY\n',
+                            style: titleTextStyle,
+                          ),
+                          TextSpan(
+                            text: '• Online check-in available.\n'
+                                '• Check-in at least 90 minutes before departure time.\n'
+                                '• Remember to bring your itinerary and government-issued photo ID'
+                                ' for airport check-in and security.\n',
+                            style: paragraphTextStyle,
                           ),
                         ],
                       ),
-                    ),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text('CHECK-IN POLICY', style: titleTextStyle),
-                        Flexible(
-                          child: Text(
-                              '• Online check-in available.\n'
-                              '• Check-in at least 90 minutes before departure time.\n'
-                              '• Remember to bring your itinerary and government-issued photo ID'
-                              ' for airport check-in and security.\n',
-                              style: paragraphTextStyle),
-                        ),
-                      ],
                     ),
                   ],
                 ),
