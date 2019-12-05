@@ -62,7 +62,7 @@ class FlightSummary extends StatelessWidget {
     );
     if (theme == SummaryTheme.light) {
       return Container(
-        color: Color(0xff69bcff),
+        color: Colors.white,
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         width: double.infinity,
         height: double.infinity,
