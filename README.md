@@ -5,7 +5,7 @@
 [logo]
 <h2 align=center> The Flutter Vignettes </h2>
 
-A set of vignettes to showcase the power of flutter created by [gskinner](https://gksinner.com). These vignettes are meant to inspire, jumpstart, and empower designed and developers to build with flutter.
+A set of vignettes to showcase the power of flutter created by [gskinner](https://gskinner.com). These vignettes are meant to inspire, jumpstart, and empower designed and developers to build with flutter.
 
 <p align=center><a href="#license"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"/></a></p> 
 <p align=center>
