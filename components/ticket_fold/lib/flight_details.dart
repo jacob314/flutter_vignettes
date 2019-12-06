@@ -64,115 +64,143 @@ class FlightDetails extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Gate'.toUpperCase(), style: titleTextStyle),
-                      Text(boardingPass.gate, style: contentTextStyle),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Zone'.toUpperCase(), style: titleTextStyle),
-                      Text(
-                        boardingPass.zone.toString(),
-                        style: contentTextStyle,
-                      ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Seat'.toUpperCase(), style: titleTextStyle),
-                      Text(boardingPass.seat, style: contentTextStyle),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Class'.toUpperCase(), style: titleTextStyle),
-                      Text(boardingPass.flightClass, style: contentTextStyle),
-                    ],
-                  ),
-                ],
+              Container(
+                margin: const EdgeInsets.only(
+                  bottom: marginBetweenRows,
+                  left: textPadding,
+                  right: textPadding,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Gate'.toUpperCase(), style: titleTextStyle),
+                        Text(boardingPass.gate, style: contentTextStyle),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Zone'.toUpperCase(), style: titleTextStyle),
+                        Text(
+                          boardingPass.zone.toString(),
+                          style: contentTextStyle,
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Seat'.toUpperCase(), style: titleTextStyle),
+                        Text(boardingPass.seat, style: contentTextStyle),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Class'.toUpperCase(), style: titleTextStyle),
+                        Text(boardingPass.flightClass, style: contentTextStyle),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Flight'.toUpperCase(), style: titleTextStyle),
-                      Text(boardingPass.flightNumber, style: contentTextStyle),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Departs'.toUpperCase(), style: titleTextStyle),
-                      Text(
-                          DateFormat('MMM d, H:mm')
-                              .format(boardingPass.departs)
-                              .toUpperCase(),
-                          style: contentTextStyle),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Arrives'.toUpperCase(), style: titleTextStyle),
-                      Text(
-                          DateFormat('MMM d, H:mm')
-                              .format(boardingPass.arrives)
-                              .toUpperCase(),
-                          style: contentTextStyle)
-                    ],
-                  ),
-                ],
+              Container(
+                margin: const EdgeInsets.only(
+                  bottom: marginBetweenRows,
+                  left: textPadding,
+                  right: textPadding,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Flight'.toUpperCase(), style: titleTextStyle),
+                        Text(boardingPass.flightNumber,
+                            style: contentTextStyle),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Departs'.toUpperCase(), style: titleTextStyle),
+                        Text(
+                            DateFormat('MMM d, H:mm')
+                                .format(boardingPass.departs)
+                                .toUpperCase(),
+                            style: contentTextStyle),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Arrives'.toUpperCase(), style: titleTextStyle),
+                        Text(
+                            DateFormat('MMM d, H:mm')
+                                .format(boardingPass.arrives)
+                                .toUpperCase(),
+                            style: contentTextStyle)
+                      ],
+                    ),
+                  ],
+                ),
               ),
               Expanded(
-                child: row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Text.rich(
+                child: Container(
+                  margin: const EdgeInsets.only(
+                    bottom: marginBetweenRows,
+                    left: textPadding,
+                    right: textPadding,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Expanded(
+                        child: Text.rich(
+                          TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(text: 'MEALS\n', style: titleTextStyle),
+                              TextSpan(
+                                text: '• Complimentary Drinks\n'
+                                    '• Optional Dishes:\n'
+                                    '    • Chicken\n'
+                                    '    • Beef\n'
+                                    '    • Pork\n'
+                                    '    • Tofu\n',
+                                style: paragraphTextStyle,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Text.rich(
                         TextSpan(
-                          children: <TextSpan>[
-                            TextSpan(text: 'MEALS\n', style: titleTextStyle),
+                          children: [
                             TextSpan(
-                              text: '• Complimentary Drinks\n'
-                                  '• Optional Dishes:\n'
-                                  '    • Chicken\n'
-                                  '    • Beef\n'
-                                  '    • Pork\n'
-                                  '    • Tofu\n',
+                              text: 'CHECK-IN POLICY\n',
+                              style: titleTextStyle,
+                            ),
+                            TextSpan(
+                              text: '• Online check-in available.\n'
+                                  '• Check-in at least 90 minutes before departure time.\n'
+                                  '• Remember to bring your itinerary and government-issued photo ID'
+                                  ' for airport check-in and security.\n',
                               style: paragraphTextStyle,
                             ),
                           ],
                         ),
                       ),
-                    ),
-                    Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text: 'CHECK-IN POLICY\n',
-                            style: titleTextStyle,
-                          ),
-                          TextSpan(
-                            text: '• Online check-in available.\n'
-                                '• Check-in at least 90 minutes before departure time.\n'
-                                '• Remember to bring your itinerary and government-issued photo ID'
-                                ' for airport check-in and security.\n',
-                            style: paragraphTextStyle,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ),
